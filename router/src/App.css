@@ -1,0 +1,344 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.task-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.task-form input,
+.task-form textarea {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.task-form input:focus,
+.task-form textarea:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+.task-form button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.task-form button:hover {
+  background-color: #45a049;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+/* Style général de la tâche */
+.task-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.task-item.completed {
+  background-color: #d3f9d8; /* Fond vert clair pour les tâches terminées */
+  text-decoration: line-through; /* Texte barré pour les tâches terminées */
+  color: #555; /* Couleur de texte atténuée pour les tâches terminées */
+}
+
+.task-item h3 {
+  font-size: 18px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.task-item p {
+  font-size: 14px;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Style des champs en mode édition */
+.task-item input,
+.task-item textarea {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.task-item input:focus,
+.task-item textarea:focus {
+  border-color: #4caf50; /* Bordure verte lors du focus */
+  outline: none;
+}
+
+/* Style des boutons */
+.task-item button {
+  padding: 8px 16px;
+  margin: 5px 5px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.task-item button:hover {
+  opacity: 0.8;
+}
+
+.task-item button:active {
+  transform: scale(0.98); /* Effet de clic avec une réduction de taille */
+}
+
+/* Bouton pour marquer comme terminé / Annuler */
+.task-item button:nth-child(1) {
+  background-color: #4caf50;
+  color: white;
+}
+
+.task-item button:nth-child(1):hover {
+  background-color: #45a049;
+}
+
+/* Bouton pour éditer / sauvegarder */
+.task-item button:nth-child(2) {
+  background-color: #ff9800;
+  color: white;
+}
+
+.task-item button:nth-child(2):hover {
+  background-color: #fb8c00;
+}
+
+/* Bouton pour supprimer */
+.task-item button:nth-child(3) {
+  background-color: #f44336;
+  color: white;
+}
+
+.task-item button:nth-child(3):hover {
+  background-color: #e53935;
+}
+/* Style global de l'application */
+.app {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f4f4f9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Titre de l'application */
+.app h1 {
+  color: #333;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+/* Style du formulaire d'ajout de tâches */
+.task-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.task-form input,
+.task-form textarea {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.task-form button {
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.task-form button:hover {
+  background-color: #45a049;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Liste des tâches */
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Style pour chaque élément de la liste de tâches */
+.task-item {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.task-item.completed {
+  background-color: #d3f9d8;
+  text-decoration: line-through;
+  color: #555;
+}
+
+.task-item h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.task-item p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.task-item button {
+  padding: 8px 16px;
+  margin: 5px 5px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Styles spécifiques aux boutons dans la liste des tâches */
+.task-item button:nth-child(1) {
+  background-color: #4caf50;
+  color: white;
+}
+
+.task-item button:nth-child(1):hover {
+  background-color: #45a049;
+}
+
+.task-item button:nth-child(2) {
+  background-color: #ff9800;
+  color: white;
+}
+
+.task-item button:nth-child(2):hover {
+  background-color: #fb8c00;
+}
+
+.task-item button:nth-child(3) {
+  background-color: #f44336;
+  color: white;
+}
+
+.task-item button:nth-child(3):hover {
+  background-color: #e53935;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .task-form {
+    max-width: 90%;
+  }
+
+  .task-item {
+    padding: 12px;
+  }
+
+  .task-item h3 {
+    font-size: 16px;
+  }
+
+  .task-item p {
+    font-size: 12px;
+  }
+
+  .task-item button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
